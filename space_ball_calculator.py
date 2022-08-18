@@ -30,7 +30,17 @@ class SpaceBallCalculator:
         F = 0.5 * self.planet.air_density() * v * v * CROSS_SECTIONAL_AREA * DRAG_COEFFICIENT
         return (F * cos(launch_angle), F * sin(launch_angle))
 
-    def distance_traveled(self) -> float:
+    def distance_traveled_without_drag(self) -> float:
+        flight_time = (
+            self.initial_velocity_vector.v * sin(self.launch_angle_radians)
+            + sqrt(
+                pow(self.initial_velocity_vector.v * sin(self.launch_angle_radians), 2)
+                + 2 * self.planet.gravitational_force() * self.initial_height_meters
+            )
+        ) / self.planet.gravitational_force()
+        return self.initial_velocity_vector.v_x * flight_time
+
+    def distance_traveled_with_drag(self) -> float:
         # https://physics.stackexchange.com/a/336696
         x = 0
         y = self.initial_height_meters
@@ -65,6 +75,11 @@ class SpaceBallCalculator:
         ft = Y[-2] / (Y[-2] - Y[-1])
 
         return X[-2] + (X[-1] - X[-2]) * ft
+
+    def distance_traveled(self) -> float:
+        if self.planet.air_density() == 0:
+            return self.distance_traveled_without_drag()
+        return self.distance_traveled_with_drag()
 
     def __str__(self) -> str:
         dist = meters_to_feet(self.distance_traveled())

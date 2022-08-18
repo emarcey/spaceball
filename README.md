@@ -15,6 +15,7 @@ A ball on Uranus, hit at 110 MPH, and an angle of 35°, would travel 647.8 feet.
 A ball on Neptune, hit at 110 MPH, and an angle of 35°, would travel 474.05 feet.
 A ball on Pluto, hit at 110 MPH, and an angle of 35°, would travel 12,910.14 feet.
 A ball on the Moon, hit at 110 MPH, and an angle of 35°, would travel 4,591.31 feet.
-A ball on the Sun, hit at 110 MPH, and an angle of 35°, would travel 30.95 feet.
-A ball on a neutron star, hit at 110 MPH, and an angle of 35°, would travel 1.23e-08 feet.
+A ball on the Sun, hit at 110 MPH, and an angle of 35°, would travel 30.96 feet.
+A ball on a neutron star, hit at 110 MPH, and an angle of 35°, would travel 1.28e-04 feet.
+A ball on Halley's Comet, hit at 110 MPH, and an angle of 35°, would travel 18,129,660.93 feet.
 ```

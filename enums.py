@@ -23,6 +23,7 @@ class CelestialBody(Enum):
     moon = {"g": 0.166, "air_density": 0, "name": "the Moon"}
     sun = {"g": 28, "air_density": 0, "name": "the Sun"}
     neutron = {"g": 2e11, "air_density": 0, "name": "a neutron star"}
+    halley = {"g": 0.000042, "air_density": 0, "name": "Halley's Comet"}
 
     def get_name(self) -> str:
         return self.value.get("name", self.name.title())
