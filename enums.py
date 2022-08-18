@@ -6,6 +6,10 @@ from utils import VelocityVector
 
 
 class CelestialBody(Enum):
+    # gravitational constant is relative to earth
+    # https://galileo.phys.virginia.edu/classes/152.mf1i.spring02/GravityFactSheet.htm
+    # air density is kg/m^3
+    # http://btc.montana.edu/ceres/malcolm/cd/html/orbitsfacts.html
     mercury = {"g": 0.378, "air_density": 0.0002}
     venus = {"g": 0.894, "air_density": 65}
     earth = {"g": 1, "air_density": 1.23}
