@@ -31,6 +31,7 @@ class SpaceBallCalculator:
         return (F * cos(launch_angle), F * sin(launch_angle))
 
     def distance_traveled(self) -> float:
+        # https://physics.stackexchange.com/a/336696
         x = 0
         y = self.initial_height_meters
         v = self.initial_velocity_vector.v
