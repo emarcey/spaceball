@@ -16,4 +16,5 @@ A ball on Neptune, hit at 110 MPH, and an angle of 35°, would travel 474.05 fee
 A ball on Pluto, hit at 110 MPH, and an angle of 35°, would travel 12,910.14 feet.
 A ball on the Moon, hit at 110 MPH, and an angle of 35°, would travel 4,591.31 feet.
 A ball on the Sun, hit at 110 MPH, and an angle of 35°, would travel 30.95 feet.
+A ball on a neutron star, hit at 110 MPH, and an angle of 35°, would travel 1.23e-08 feet.
 ```
