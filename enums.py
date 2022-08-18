@@ -32,12 +32,3 @@ class CelestialBody(Enum):
 
     def air_density(self) -> float:
         return self.value["air_density"]
-
-    def drag(self, v: VelocityVector) -> float:
-        return 0.25 * DRAG_COEFFICIENT * self.value["air_density"] * CROSS_SECTIONAL_AREA * pow(v.v, 2)
-
-    def force_applied_y(self, v: VelocityVector, launch_angle: float) -> float:
-        return self.acceleration() + (self.drag(v) * sin(launch_angle)) / BASEBALL_MASS
-
-    def force_applied_x(self, v: VelocityVector, launch_angle: float) -> float:
-        return (self.drag(v) * cos(launch_angle)) / BASEBALL_MASS
