@@ -20,16 +20,12 @@ class CelestialBody(Enum):
     neptune = {"g": 1.2, "air_density": 0.45}
     pluto = {"g": 0.059, "air_density": 0}
     # non-planets
-    moon = {"g": 0.166, "air_density": 0}
-    sun = {"g": 28, "air_density": 0}
+    moon = {"g": 0.166, "air_density": 0, "name": "the Moon"}
+    sun = {"g": 28, "air_density": 0, "name": "the Sun"}
+    neutron = {"g": 2e11, "air_density": 0, "name": "a neutron star"}
 
     def get_name(self) -> str:
-        overrides = {
-            CelestialBody.moon: "the Moon",
-            CelestialBody.sun: "the Sun",
-        }
-
-        return overrides.get(self, self.name.title())
+        return self.value.get("name", self.name.title())
 
     def gravitational_force(self) -> float:
         return 9.8 * self.value["g"]

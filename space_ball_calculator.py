@@ -67,4 +67,9 @@ class SpaceBallCalculator:
         return X[-2] + (X[-1] - X[-2]) * ft
 
     def __str__(self) -> str:
-        return f"A ball on {self.planet.get_name()}, hit at {round(self.initial_velocity,2)} MPH, and an angle of {self.launch_angle}°, would travel {round(meters_to_feet(self.distance_traveled()), 2):,} feet."
+        dist = meters_to_feet(self.distance_traveled())
+        dist_str = f"{round(dist, 2):,}"
+        if dist < 1e-2:
+            dist_str = f"{dist:.2e}"
+
+        return f"A ball on {self.planet.get_name()}, hit at {round(self.initial_velocity,2)} MPH, and an angle of {self.launch_angle}°, would travel {dist_str} feet."
